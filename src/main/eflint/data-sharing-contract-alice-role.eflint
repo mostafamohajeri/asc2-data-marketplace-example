@@ -1,0 +1,20 @@
+#require "data_sharing_basics.eflint".
+
+Extend Act send_data Creates data When target == "A".
+
+Extend Act send_data
+  Holds when source == "A" && target == "D" && data == "ResultFinal".
+
+Extend Act send_data
+  Creates send_data("C","A","Result1")
+    When source == "A" && target == "C" && data == "Alg1".
+
+Extend Act compute
+  Creates data("ResultFinal")
+    When input && algorithm && input == "Result1" && algorithm == "Alg2".
+
+Extend Act compute
+  Holds when source == "A" && target == "D" && input == "Result1" && algorithm == "Alg2".
+
+Extend Event init_contract
+  Creates data("Alg2"), send_data("A","C","Alg1"), party("A"), party("B"), party("C"), party("D").

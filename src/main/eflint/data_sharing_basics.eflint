@@ -1,0 +1,21 @@
+Fact party
+Placeholder source For party
+Placeholder target For party
+Fact data
+Placeholder input For data
+Placeholder algorithm For data
+Placeholder result For data
+
+Act send_data
+  Actor source
+  Recipient target
+  Related to data
+
+Act compute
+  Actor source
+  Recipient target
+  Related to input, algorithm
+
+Event init_contract
+.
+
