@@ -1,5 +1,8 @@
-## Scenario
+## Data market-place example with ASC2 and eFLINT
+This is an example of to model a complex data-sharing scenario with these tools.
 
+## Scenario (1)
+* Four participants: **A,B,C,D**
 * David (**D**) is in need of some synthesized (or a trained model) called **ResultFinal**.
 * Alice (**A**) has two algorithms (**Alg1**,**Alg2**) that when used in a sequence can produce the **ResultFinal** for David
 * But Alice needs the input data **Data1** as input to **Alg1** to create the **Result1** and then feed that to **Alg2** to create the model
@@ -13,7 +16,7 @@
   * A runs Alg2 on Result1 and creates ResultFinal
   * A sends ResultFinal to D
 
-## Implementation
+## Implementation (1)
 
 Each agent gets a very specific and detailed advisor about their role (e.g.,`data-sharing-contract-charlie-role.eflint`), the advisor only provides local information to agent about 
 its role and nothing more. This means 100% privacy about internal state and no leakage of meta-data about policies.
@@ -23,11 +26,10 @@ only thing **D** knows is that at some point it will receive a data called **Res
 
 (important note: No usage of Duties in these files to make it simple, the implicit assumption is that all enabled actions are obligatory (once))
 
+### Question: can we automate this process from something simpler? even graphical?
 
-### Question: can we automate this?
-
-## Alternative 1 (For later?)
+## Alternative (2)
 Instead of a local one, we can make a central instance that filters information before sending to agents (is it easier to do so?)
 
-## Alternative 2 
+## Alternative (3) 
 Instead of local one, can we make advisors about bilateral connections? like the sale example so agents share advisors and also some meta-data about policy
