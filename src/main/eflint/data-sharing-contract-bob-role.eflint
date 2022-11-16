@@ -2,7 +2,7 @@
 
 
 Extend Event init_contract
-  Creates data("Data1"), send_data("B","C","Data1"), party("A"), party("C"), party("B").
+  Creates data("Data1"), send_data("B","C","Data1"), to_send_data("B","C","Data1"), party("A"), party("C"), party("B").
 
 
 

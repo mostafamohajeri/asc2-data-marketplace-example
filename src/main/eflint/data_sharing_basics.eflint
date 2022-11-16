@@ -12,11 +12,22 @@ Act send_data
   Actor source
   Recipient target
   Related to data
-
+  Terminates to_send_data()
 
 Act compute
   Actor source
   Recipient target
+  Related to input, algorithm, reference
+  Terminates to_compute()
+
+Duty to_send_data
+  Holder source
+  Claimant target
+  Related to data
+
+Duty to_compute
+  Holder source
+  Claimant target
   Related to input, algorithm, reference
 
 

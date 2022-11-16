@@ -24,8 +24,6 @@ Also, the advisor can be specialized for each agent based on the local regulatio
 state of each agent with the local transmission logger of ASC2, for example from the start the 
 only thing **D** knows is that at some point it will receive a data called **ResultFinal** and is never aware of anything that is happening in between, or, when Alice sends Alg1 to Charlie, she only knows that at some point it will receive Result1, regardless of the rest of the agents.
 
-(important note: No usage of Duties in these files to make it simple, the implicit assumption is that all enabled actions are obligatory (once))
-
 Executing the MAS generates this:
 ![Sequence Diagram](logs/all.png?raw=true "Title")
 

@@ -28,18 +28,22 @@
     #println(Self + " : " + compute(S,T,D,Alg,Ref)).
 
 +send_data(S,T,D) : Self == S =>
-    #println(Self + " : " + send_data(S,T,D));
-    !send_data(T,D)
+    #println(Self + " : duty to " + send_data(S,T,D));
+    !send_data(T,D).
 
 +send_data(S,T,D) =>
-    #println(Self + " : " + send_data(S,T,D)).
+    #println(Self + " : duty to " + send_data(S,T,D)).
+
+-send_data(S,T,D) : Self == S =>
+    #println(Self + " : no longer duty to " + send_data(S,T,D)).
+
+-send_data(S,T,D) =>
+    #println(Self + " : no longer duty to " + send_data(S,T,D)).
 
 +!inform_advisor(event,Event) : advisor(Advisor) =>
-    #println("telling " + Advisor + " " + Event);
     #coms.achieve(Advisor,occurred(Event)).
 
 +!inform_advisor(act,Act) : advisor(Advisor) =>
-    #println("telling " + Advisor + " " + Act);
     #coms.achieve(Advisor,perform(Act)).
 
 

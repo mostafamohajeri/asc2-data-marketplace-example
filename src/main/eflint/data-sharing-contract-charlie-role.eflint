@@ -5,6 +5,9 @@ Extend Act send_data Creates data When target == "C".
 Extend Act send_data
   Holds when source == "C" && target == "A" && data == "Result1".
 
+Extend Duty to_send_data
+  Holds when source == "C" && target == "A" && data == "Result1".
+
 Extend Act compute
   Creates data("Result1")
     When input && algorithm && input == "Data1" && algorithm == "Alg1".
@@ -12,6 +15,9 @@ Extend Act compute
 Extend Act compute
   Holds when source == "C" && target == "A" && input == "Data1" && algorithm == "Alg1" && reference == "Result1".
 
+Extend Duty to_compute
+  Holds when source == "C" && target == "A" && input == "Data1" && algorithm == "Alg1" && reference == "Result1".
+
 Extend Event init_contract
-  Creates send_data("A","C","Alg1"), send_data("B","C","Data1"), party("A"), party("B"), party("C"), reference("Result1").
+  Creates send_data("A","C","Alg1"), send_data("B","C","Data1"),to_send_data("A","C","Alg1"), to_send_data("B","C","Data1"), party("A"), party("B"), party("C"), reference("Result1").
 

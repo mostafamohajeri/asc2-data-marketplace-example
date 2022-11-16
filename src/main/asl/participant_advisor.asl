@@ -18,11 +18,20 @@
 
 +?holds(A) => #coms.respond(false).
 
-+send_data(party(S),party(T),data(D)) =>
++to_send_data(party(S),party(T),data(D)) =>
     ParentName = #asString(Self).replace("Advisor","");
     #coms.inform(ParentName,send_data(S,T,D)).
 
 
-+compute(party(S),party(T),data(D),data(Alg),reference(Ref)) =>
++to_compute(party(S),party(T),data(D),data(Alg),reference(Ref)) =>
     ParentName = #asString(Self).replace("Advisor","");
     #coms.inform(ParentName,compute(S,T,D,Alg,Ref)).
+
+-to_send_data(party(S),party(T),data(D)) =>
+    ParentName = #asString(Self).replace("Advisor","");
+    #coms.un_inform(ParentName,send_data(S,T,D)).
+
+
+-to_compute(party(S),party(T),data(D),data(Alg),reference(Ref)) =>
+    ParentName = #asString(Self).replace("Advisor","");
+    #coms.un_inform(ParentName,compute(S,T,D,Alg,Ref)).

@@ -3,4 +3,4 @@
 Extend Act send_data Creates data When target == "D".
 
 Extend Event init_contract
-  Creates  send_data("A","D","ResultFinal"), party("A"), party("D").
+  Creates  send_data("A","D","ResultFinal"), to_send_data("A","D","ResultFinal"), party("A"), party("D").
