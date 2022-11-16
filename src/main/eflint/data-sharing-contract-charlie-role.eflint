@@ -10,7 +10,8 @@ Extend Act compute
     When input && algorithm && input == "Data1" && algorithm == "Alg1".
 
 Extend Act compute
-  Holds when source == "C" && target == "A" && input == "Data1" && algorithm == "Alg1".
+  Holds when source == "C" && target == "A" && input == "Data1" && algorithm == "Alg1" && reference == "Result1".
 
 Extend Event init_contract
-  Creates send_data("A","C","Alg1"), send_data("B","C","Data1"), party("A"), party("B"), party("C").
+  Creates send_data("A","C","Alg1"), send_data("B","C","Data1"), party("A"), party("B"), party("C"), reference("Result1").
+

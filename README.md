@@ -26,6 +26,9 @@ only thing **D** knows is that at some point it will receive a data called **Res
 
 (important note: No usage of Duties in these files to make it simple, the implicit assumption is that all enabled actions are obligatory (once))
 
+Executing the MAS generates this:
+![Sequence Diagram](logs/all.png?raw=true "Title")
+
 ### Question: can we automate this process from something simpler? even graphical?
 
 ## Alternative (2)

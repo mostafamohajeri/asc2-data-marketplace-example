@@ -5,16 +5,20 @@ Fact data
 Placeholder input For data
 Placeholder algorithm For data
 Placeholder result For data
+Fact reference
+
 
 Act send_data
   Actor source
   Recipient target
   Related to data
 
+
 Act compute
   Actor source
   Recipient target
-  Related to input, algorithm
+  Related to input, algorithm, reference
+
 
 Event init_contract
 .

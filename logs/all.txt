@@ -1,0 +1,40 @@
+@startuml
+
+participant A [Alice]
+participant AAdvisor
+participant B
+participant BAdvisor
+participant C
+participant CAdvisor
+participant D
+participant DAdvisor
+A->AAdvisor : !occurred(init_contract)
+D->DAdvisor : !occurred(init_contract)
+B->BAdvisor : !occurred(init_contract)
+C->CAdvisor : !occurred(init_contract)
+CAdvisor->C : +send_data(A,C,Alg1)
+CAdvisor->C : +send_data(B,C,Data1)
+DAdvisor->D : +send_data(A,D,ResultFinal)
+BAdvisor->B : +send_data(B,C,Data1)
+B->BAdvisor : !perform(send_data(B,C,Data1))
+B->C : +package(Data1)
+C->CAdvisor : !occurred(send_data(B,C,Data1))
+AAdvisor->A : +send_data(A,C,Alg1)
+A->AAdvisor : !perform(send_data(A,C,Alg1))
+A->C : +package(Alg1)
+C->CAdvisor : !occurred(send_data(A,C,Alg1))
+CAdvisor->C : +compute(C,A,Data1,Alg1,Result1)
+C->CAdvisor : !perform(compute(C,A,Data1,Alg1,Result1))
+AAdvisor->A : +send_data(C,A,Result1)
+CAdvisor->C : +send_data(C,A,Result1)
+C->CAdvisor : !perform(send_data(C,A,Result1))
+C->A : +package(Result1)
+A->AAdvisor : !occurred(send_data(C,A,Result1))
+AAdvisor->A : +compute(A,D,Result1,Alg2,ResultFinal)
+A->AAdvisor : !perform(compute(A,D,Result1,Alg2,ResultFinal))
+AAdvisor->A : +send_data(A,D,ResultFinal)
+A->AAdvisor : !perform(send_data(A,D,ResultFinal))
+A->D : +package(ResultFinal)
+D->DAdvisor : !occurred(send_data(A,D,ResultFinal))
+
+@enduml
